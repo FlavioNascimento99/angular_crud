@@ -1,51 +1,52 @@
-<div id="header">
-  <mat-toolbar class="header-toolbar" color="primary">
-    <span>{{ title }}</span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> verified</mat-icon>
-  </mat-toolbar>
+<div id="app">
+  <div id="header">
+    <mat-toolbar class="header-toolbar" color="primary">
+      <span>{{ title }}</span>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> verified</mat-icon>
+    </mat-toolbar>
 
-</div>
-
-<div id="main">
-  <div id="form">
-    <mat-form-field appearance="outline">
-      <mat-label>Título</mat-label>
-      <input matInput placeholder="" [(ngModel)]="game.name">
-      <mat-icon matSuffix>badge</mat-icon>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Ano de Lançamento</mat-label>
-      <input matInput placeholder="" [(ngModel)]="game.year">
-      <mat-icon matSuffix>calendar_month</mat-icon>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Desenvolvedora</mat-label>
-      <input matInput placeholder="" [(ngModel)]="game.publisher">
-      <mat-icon matSuffix>code</mat-icon>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Descrição</mat-label>
-      <input matInput placeholder="" [(ngModel)]="game.description">
-      <mat-icon matSuffix>edit_note</mat-icon>
-    </mat-form-field>
-
-    <button (click)="insertGameOnList()" >
-      add
-    </button>
   </div>
 
-  <div id="list">
-    <div class="card">
-      <mat-card *ngFor="let game of games">
+  <div id="main">
+    <div id="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Título</mat-label>
+        <input matInput placeholder="" [(ngModel)]="game.name">
+        <mat-icon matSuffix>badge</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Ano de Lançamento</mat-label>
+        <input matInput placeholder="" [(ngModel)]="game.year">
+        <mat-icon matSuffix>calendar_month</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Desenvolvedora</mat-label>
+        <input matInput placeholder="" [(ngModel)]="game.publisher">
+        <mat-icon matSuffix>code</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input matInput placeholder="" [(ngModel)]="game.description">
+        <mat-icon matSuffix>edit_note</mat-icon>
+      </mat-form-field>
+
+      <button mat-fab extended color="primary" (click)="insertGameOnList()">
+        <mat-icon>add</mat-icon>
+        Adicionar
+      </button>
+    </div>
+
+    <div id="list">
+      <mat-card class="card" *ngFor="let game of games">
         <mat-card-header>
           <mat-card-title style="font-size: 24px">
             {{game.name}}
             <span style="font-weight: lighter; color: grey; font-size: 14px">
-              {{game.year}}
-            </span>
+            {{game.year}}
+          </span>
           </mat-card-title>
           <mat-card-subtitle>{{game.publisher}}</mat-card-subtitle>
         </mat-card-header>
@@ -54,7 +55,7 @@
             {{game.description}}
           </p>
         </mat-card-content>
-        <mat-card-footer align="end">
+        <mat-card-footer>
           <button mat-icon-button>
             <mat-icon>favorite</mat-icon>
           </button>

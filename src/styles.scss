@@ -1,16 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 * {
-  margin: 0;
   padding: 0;
-  font-family: Consolas;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
 }
 
 body {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 3em;
+
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; width: 100%}

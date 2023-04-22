@@ -16,14 +16,16 @@ export class AppComponent {
     this.game = new Game();
     this.games = new Array<Game>();
 
-    this.games = []
+    this.games = [
+      new Game('Fallout New Vegas', 2010, 'Obsidian', 'Narrative Open-World Single-player RPG'),
+      new Game('The Elder Scrolls V: Skyrim ', 2011, 'Bethesda', 'Open-World Single-player RPG'),
+      new Game('Counter-Strike: Global Offensive', 2012, 'Valve Software', 'Competitive First Person Shooter')
+    ]
   }
 
   insertGameOnList(){
     this.games.push(this.game);
     this.game = new Game();
-
-    console.log("Deu certo amigo: ", this.games, this.games.length)
   }
 
   removeGameFromList(toRemoveTitle: Game){
