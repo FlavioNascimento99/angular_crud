@@ -24,8 +24,25 @@ export class AppComponent {
   }
 
   insertGameOnList(){
-    this.games.push(this.game);
-    this.game = new Game();
+    if (this.game.name.valueOf() == "" ) {
+      alert("Por favor, preencher campo Titulo");
+    } else if (this.game.year.valueOf() ==  0 || "") {
+      if (this.game.year == 0) {
+        alert("Eu tenho CERTEZA que este título não foi lançado no ano 0, por favor, corrija o ano de lançamento e tente novamente.");
+      }
+    } else if (this.game.publisher.valueOf() == "" ) {
+      alert("Por favor, preencher campo Publisher");
+    } else if (this.game.description.valueOf() == "" ) {
+      alert("Por favor, preencher campo Descrição");
+    }
+
+
+    else {
+      this.games.push(this.game);
+      this.game = new Game();
+    }
+
+    console.log(this.games)
   }
 
   removeGameFromList(toRemoveTitle: Game){
@@ -36,4 +53,6 @@ export class AppComponent {
   updateGameOnList(toUpdateGame: Game) {
     // To-Do
   }
+
+  protected readonly alert = alert;
 }
