@@ -3,7 +3,7 @@ export class Game {
   public id: number;
   constructor(
     public name: string = "",
-    public year: number = 1999,
+    public year: number = 0,
     public publisher: string = "",
     public description: string = "",
   ) {
